@@ -1,5 +1,8 @@
 <template>
   <v-flex>
+    <v-toolbar flat color="white">
+      <v-toolbar-title>Lista de Pets</v-toolbar-title>
+    </v-toolbar>
     <v-data-table 
       :headers="headers"
       :items="pets"
