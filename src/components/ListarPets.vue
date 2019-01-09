@@ -1,12 +1,16 @@
 <template>
-  <v-flex>
-    <v-toolbar flat color="white">
+  <span>
+    <v-toolbar class="elevation-1 primary white--text">
       <v-toolbar-title>Lista de Pets</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items>
+        <v-btn flat>Novo Pet</v-btn>
+      </v-toolbar-items>
     </v-toolbar>
     <v-data-table 
       :headers="headers"
       :items="pets"
-      class="elevation-2">
+      class="elevation-3">
 
         <template slot="items" slot-scope="{ item }">
           <td>{{ item.nome }}</td>
@@ -23,7 +27,7 @@
         </template>
 
     </v-data-table>
-  </v-flex>
+  </span>
 </template>
 
 <script>

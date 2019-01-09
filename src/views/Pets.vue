@@ -1,9 +1,6 @@
 <template>
   <v-container>
     <v-layout row wrap>
-      <v-flex xs12 tag="h2" class="mb-3">
-        Listar Pets
-      </v-flex>
       <v-flex xs12>
         <ListarPets :pets="pets"/>
       </v-flex>
