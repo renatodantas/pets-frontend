@@ -6,13 +6,19 @@
           <v-toolbar-title>Lista de Pets</v-toolbar-title>
           <v-spacer></v-spacer>
           <v-toolbar-items>
-            <v-btn flat class="white--text" @click="exibirModalPet = true">
+            <v-btn flat class="white--text" @click.stop="exibirModalPet = true">
               <v-icon left>add_box</v-icon> Novo
             </v-btn>
           </v-toolbar-items>
         </v-toolbar>
-        <ListarPets :pets="pets"/>
-        <EditarPet :pet="petSelecionado" :exibir="exibirModalPet"/>
+        
+        <ListarPets 
+          :pets="pets"/>
+        
+        <EditarPet 
+          :pet="petSelecionado" 
+          :exibir="exibirModalPet" 
+          @hide="exibirModalPet = false"/>
       </v-flex>
     </v-layout>
   </v-container>

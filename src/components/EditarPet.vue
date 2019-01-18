@@ -1,5 +1,5 @@
 <template>
-  <v-dialog fullscreen hide-overlay scrollable v-model="exibirModal" max-width="600px" transition="dialog-bottom-transition">
+  <v-dialog fullscreen hide-overlay scrollable v-model="exibir" max-width="600px" transition="dialog-bottom-transition">
     <v-card>
       <v-card-title>
         <span class="headline">User Profile</span>
@@ -47,8 +47,8 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="blue darken-1" flat @click="exibirModal = false">Close</v-btn>
-        <v-btn color="blue darken-1" flat @click="exibirModal = false">Save</v-btn>
+        <v-btn color="blue darken-1" flat @click="$emit('hide')">Close</v-btn>
+        <v-btn color="blue darken-1" flat @click="$emit('hide')">Save</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -57,19 +57,26 @@
 <script>
 export default {
   name: 'EditarPet',
+  model: {
+    event: 'hide'
+  },
   props: {
     pet: {
       type: Object,
       required: true
     },
-    show: {
+    exibir: {
       type: Boolean,
-      required: true
-    },
-    hide: {
-      type: Function,
-      required: true
+      required: true  
     }
+    // show: {
+    //   type: Boolean,
+    //   required: true
+    // },
+    // hide: {
+    //   type: Function,
+    //   required: true
+    // }
   }
 }
 </script>
